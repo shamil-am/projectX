@@ -4,24 +4,13 @@ import { useContext, useState } from 'react';
 
 import CategoryNode from '@/components/CategoryNode';
 import { NodeContext } from '@/contexts/categoryContext';
+import { ViewContext } from '@/contexts/viewContext';
 
 const Area = () => {
     const { categoryNode } = useContext(NodeContext);
+    const { zoom, position, handlePointerMove } = useContext(ViewContext);
 
-    const [translate, setTranslate] = useState({
-        x: 0,
-        y: 0,
-    });
     const [isDragging, setIsDragging] = useState(false);
-
-    const handlePointerMove = (e: any) => {
-        if (isDragging) {
-            setTranslate({
-                x: translate.x + e.movementX,
-                y: translate.y + e.movementY,
-            });
-        }
-    };
 
     return (
         <main className='area'>
@@ -29,9 +18,9 @@ const Area = () => {
                 className='wrapper'
                 onPointerDown={() => setIsDragging(true)}
                 onPointerUp={() => setIsDragging(false)}
-                onPointerMove={handlePointerMove}
+                onPointerMove={(e) => handlePointerMove(isDragging, e)}
                 style={{
-                    transform: `translateX(${translate.x}px) translateY(${translate.y}px)`,
+                    transform: `translateX(${position.x}px) translateY(${position.y}px) scale(${zoom / 100})`,
                 }}
             >
                 <CategoryNode categoryNode={categoryNode} />
