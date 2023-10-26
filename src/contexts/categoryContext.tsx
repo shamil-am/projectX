@@ -71,7 +71,7 @@ NodeContext.displayName = localStorageKey;
 const NodeProvider: FC<IProps> = ({ children }) => {
     const firstUpdate = useRef(true);
 
-    const [categoryNode, setCategoryNode] = useState<ICategoryNode>({ id: '1', name: 'Category', subCategories: [] });
+    const [categoryNode, setCategoryNode] = useState<ICategoryNode>({ id: '1', name: '', subCategories: [] });
 
     const addNewCategoryNode = (id: string, name: string) => {
         const newNode = {
