@@ -23,9 +23,10 @@
         column-gap: 0.5rem;
         position: relative;
         input {
-            padding: 0.5rem;
+            padding: 1rem 0.5rem;
             border: none;
             text-align: center;
+            text-transform: capitalize;
             &:disabled {
                 background-color: orange;
                 color: #fff;
@@ -37,11 +38,11 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            min-width: 4rem;
-            right: -4.5rem;
+            min-width: 5rem;
+            right: -6rem;
             button {
-                width: 1rem;
-                height: 1rem;
+                width: 1.5rem;
+                height: 1.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -70,7 +71,7 @@
     &__subcategories {
         display: inline-flex;
         justify-content: space-between;
-        column-gap: 6rem;
+        column-gap: 7rem;
         position: relative;
         margin-top: 1.5rem;
         &--with-line {
@@ -88,12 +89,12 @@
                 }
                 &::before {
                     content: '';
-                    width: calc(50% + 6rem);
+                    width: calc(50% + 7rem);
                     height: 0.0625rem;
                     background-color: gray;
                     position: absolute;
                     top: -1.25rem;
-                    right: -6rem;
+                    right: -7rem;
                 }
                 &::after {
                     content: '';

@@ -1,5 +1,13 @@
 .area {
     height: calc(100vh - 4rem);
+    max-width: 100vw;
+    overflow-x: auto;
     padding: 2rem;
     background-color: #cecece4a;
+    .wrapper {
+        cursor: move;
+        padding: 1rem;
+        position: relative;
+        display: inline-block;
+    }
 }
